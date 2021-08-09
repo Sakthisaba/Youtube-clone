@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube-Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" ></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <style>
+     /* Scrollbar styling */
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius:5px;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius:5px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      </style>
+</head>
+<body>
+    <div class="header">
+        <div class="youtube-logo">
+          <a href="#"><span class="material-icons">menu</span> 
+          </a>
+            <a href="#"><img style="width: 100px;" src="https://williamdsw.github.io/tut-youtube-clone-wds/icons/youtube-logo.svg">
+          </a>
+        </div>
+            <form class="search-bar">
+               <input class="search" type="search" placeholder="Search">
+               <button class="search-button" type="submit" >
+                   <span class="material-icons">
+                    search
+                    </span>
+                </button>        
+        
+           </form> 
+           <div class="menu">
+               <a href="#"><span class="material-icons">
+                 video_call
+                </span></a>
+                <a href="#"><span class="material-icons">
+                    apps
+                </span></a>
+               <a href="#"><span class="material-icons">
+                notifications
+                </span></a>
+                <a  href="#" class="profile">
+                <img style="display: flex;align-items: flex-start; margin-top: -4px;" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></a>
+           </div> 
+    </div>
+    <aside class="sidebar">
+      
+        <nav class="sidebar-menu">
+          <ul>
+            <li class="active"><span class="material-icons">
+              home
+              </span><span class="text"> Home</span>
+              </li>
+            <li class="sidebar-link"><span class="material-icons">
+              explore
+              </span><span class="text">Trending</span></li>
+            <li class="sidebar-link"><span class="material-icons">
+              subscriptions
+              </span><span class="text">Subscriptions</span>
+              </li>
+
+          </ul>
+        </nav>
+        <nav class="sidebar-menu">
+          <ul>
+            <li class="sidebar-link"><span class="material-icons">
+              video_library
+              </span><span class="text">Library</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              history
+              </span><span class="text">History</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              slideshow
+              </span><span class="text">Your Videos</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              watch_later
+              </span><span class="text">Watch Later</span>
+            </li>
+            <li class="sidebar-link">
+               <span class="material-icons">
+                thumb_up
+               </span>
+               <span class="text">Liked Videos
+
+               </span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              expand_more
+              </span>
+              <span class="text">Expand More</span>
+            </li>
+            
+
+          </ul>
+        </nav>
+        <nav class="sidebar-menu">
+         
+          <ul>
+            <li><span style="margin-top: 5px;font-size: 0.9rem;" >SUBSCRIPTIONS</span></li>
+            <li class="sidebar-link"> <img class="profile-in-sidebar" src="https://yt3.ggpht.com/ytc/AKedOLTjRAMaQkJaABC59u63AB9s7UTyQ8enbSoo_TI8cA=s88-c-k-c0x00ffffff-no-rj">
+              <span class="text">PewDiePie</span>
+            </li>
+            <li class="sidebar-link"><img class="profile-in-sidebar" src="https://yt3.ggpht.com/ytc/AKedOLT2s7SBZK8ysVDCLPPyGTCgGrOw1PQktJzpAH5tGBg=s176-c-k-c0x00ffffff-no-rj-mo">
+              <span class="text">T-Series</span>
+            </li>
+            <li class="sidebar-link"> <img class="profile-in-sidebar" src="https://yt3.ggpht.com/ytc/AKedOLTXnhd73BVcIS6Eh-NbBuAKL2Z-IpqNg3Ta6nSiEA=s88-c-k-c0x00ffffff-no-rj">
+              <span class="text">TED-Talks</span>
+            </li>
+            <li class="sidebar-link"><img class="profile-in-sidebar" src="https://yt3.ggpht.com/ytc/AKedOLQgL1jBVAGEEGwBzmLV38AWj0_yrdPw0vDxdpce0A=s88-c-k-c0x00ffffff-no-rj">
+              <span class="text">Netflix</span>
+            <li class="sidebar-link"><span class="material-icons">
+                expand_more
+                </span>
+                <span class="text">Show 50 More</span>
+            </li>
+        </nav>
+        <nav class="sidebar-menu">
+         
+          <ul>
+            <li><span style="margin-top: 5px;font-size: 0.9rem;" >MORE FROM YOUTUBE</span></li>
+            <li class="sidebar-link"><span class="material-icons">
+              smart_display
+              </span>
+              <span class="text">YouTube Premium</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              theaters
+              </span>
+              <span class="text">Flims</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              sports_esports
+              </span><span class="text">Gaming</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              sensors
+              </span><span class="text">Live</span>
+            </li>
+            <li class="sidebar-link"><span class="material-icons">
+              lightbulb
+              </span>
+              <span class="text">Learn</span>
+              <li class="sidebar-link"><span class="material-icons">
+                emoji_events
+                </span>
+                <span class="text">Sport</span>
+            </li>
+          </ul> 
+        </nav>
+        <nav class="sidebar-menu">
+          <ul>
+            <li class="active"><span class="material-icons">
+              settings
+              </span><span class="text">Settings</span>
+              </li>
+            <li class="sidebar-link"><span class="material-icons">
+              help
+              </span><span class="text">Help</span></li>
+            <li class="sidebar-link"><span class="material-icons">
+              feedback
+              </span><span class="text">Feedback</span>
+              </li>
+
+          </ul>
+    </aside>
+    <span class="hide" style="display: none;">Open with 1000px Screen size</span>
+    <div class="main">
+        <div class="categories">
+       <section class="category-links">
+         <button class="category-active">All</button>
+         <button class="category">Category 1</button>
+         <button class="category">Category 2</button>
+         <button class="category">Category 3</button>
+         <button class="category">Category 4</button>
+         <button class="category">Category 5</button>
+         <button class="category">Category 6</button>
+         <button class="category">Category 7</button>
+         <button class="category">Category 8</button>
+         <button class="category">Category 9</button>
+         <button class="category">Category 10</button>
+         <button class="category">Category 11</button>
+      </section>
+        </div>
+       <div class="videos"> 
+         <div class="section">
+          <div class="video">
+             <a href="#" class="thumbnail">
+        
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+             </a>
+        
+            <div class="details">
+              <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              </div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                         check_circle
+                         </span>
+                     </a>
+          
+                    </div>
+        
+                  <div class="views">
+                   <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                     </span>
+  
+                      <span> 8 weeks ago</span>
+                    </a>
+                  </div>
+           </div>
+           </div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                  check_circle
+                    </span>
+                  </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                    </span>
+        
+                     </span> 8 weeks ago</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="video">
+              <a href="#" class="thumbnail">
+                
+                <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                <div class="duration">16:00</div>
+                </a>
+                
+                <div class="details">
+                  <div class="profile">
+                  <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                     <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                    check_circle
+                      </span>
+                    </a>
+                  
+                    </div>
+                
+                    <div class="views">
+                      <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                       circle
+                      </span>
+          
+                       </span> 8 weeks ago</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="video">
+                <a href="#" class="thumbnail">
+                  
+                  <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                  <div class="duration">16:00</div>
+                  </a>
+                  
+                  <div class="details">
+                    <div class="profile">
+                    <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                    <div class="video-details">
+                     <div class="video-title">
+                       <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                      check_circle
+                        </span>
+                      </a>
+                    
+                      </div>
+                  
+                      <div class="views">
+                        <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                         circle
+                        </span>
+            
+                         </span> 8 weeks ago</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+         </div>
+         <div class="section">
+          <div class="video">
+             <a href="#" class="thumbnail">
+        
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+             </a>
+        
+            <div class="details">
+              <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              </div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                         check_circle
+                         </span>
+                     </a>
+          
+                    </div>
+        
+                  <div class="views">
+                   <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                     </span>
+  
+                      <span> 8 weeks ago</span>
+                    </a>
+                  </div>
+           </div>
+           </div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                  check_circle
+                    </span>
+                  </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                    </span>
+        
+                     </span> 8 weeks ago</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="video">
+              <a href="#" class="thumbnail">
+                
+                <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                <div class="duration">16:00</div>
+                </a>
+                
+                <div class="details">
+                  <div class="profile">
+                  <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                     <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                    check_circle
+                      </span>
+                    </a>
+                  
+                    </div>
+                
+                    <div class="views">
+                      <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                       circle
+                      </span>
+          
+                       </span> 8 weeks ago</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="video">
+                <a href="#" class="thumbnail">
+                  
+                  <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                  <div class="duration">16:00</div>
+                  </a>
+                  
+                  <div class="details">
+                    <div class="profile">
+                    <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                    <div class="video-details">
+                     <div class="video-title">
+                       <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                      check_circle
+                        </span>
+                      </a>
+                    
+                      </div>
+                  
+                      <div class="views">
+                        <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                         circle
+                        </span>
+            
+                         </span> 8 weeks ago</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+         </div>
+         <div class="section">
+          <div class="video">
+             <a href="#" class="thumbnail">
+        
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+             </a>
+        
+            <div class="details">
+              <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              </div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                         check_circle
+                         </span>
+                     </a>
+          
+                    </div>
+        
+                  <div class="views">
+                   <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                     </span>
+  
+                      <span> 8 weeks ago</span>
+                    </a>
+                  </div>
+           </div>
+           </div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                  check_circle
+                    </span>
+                  </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                    </span>
+        
+                     </span> 8 weeks ago</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="video">
+              <a href="#" class="thumbnail">
+                
+                <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                <div class="duration">16:00</div>
+                </a>
+                
+                <div class="details">
+                  <div class="profile">
+                  <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                     <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                    check_circle
+                      </span>
+                    </a>
+                  
+                    </div>
+                
+                    <div class="views">
+                      <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                       circle
+                      </span>
+          
+                       </span> 8 weeks ago</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="video">
+                <a href="#" class="thumbnail">
+                  
+                  <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                  <div class="duration">16:00</div>
+                  </a>
+                  
+                  <div class="details">
+                    <div class="profile">
+                    <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                    <div class="video-details">
+                     <div class="video-title">
+                       <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                      check_circle
+                        </span>
+                      </a>
+                    
+                      </div>
+                  
+                      <div class="views">
+                        <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                         circle
+                        </span>
+            
+                         </span> 8 weeks ago</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+         </div>
+         <div class="section">
+          <div class="video">
+             <a href="#" class="thumbnail">
+        
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+             </a>
+        
+            <div class="details">
+              <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              </div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                         check_circle
+                         </span>
+                     </a>
+          
+                    </div>
+        
+                  <div class="views">
+                   <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                     </span>
+  
+                      <span> 8 weeks ago</span>
+                    </a>
+                  </div>
+           </div>
+           </div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+        check_circle
+        </span>
+        </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+        circle
+        </span>
+        
+        </span> 8 weeks ago</a>
+                  </div>
+                </div></div>
+          </div>
+         <div class="video">
+            <a href="#" class="thumbnail">
+              
+              <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+              <div class="duration">16:00</div>
+              </a>
+              
+              <div class="details">
+                <div class="profile">
+                <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                <div class="video-details">
+                 <div class="video-title">
+                   <a herf="#" class="video-title">Video Title</a>
+                   <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                  check_circle
+                    </span>
+                  </a>
+                
+                  </div>
+              
+                  <div class="views">
+                    <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                     circle
+                    </span>
+        
+                     </span> 8 weeks ago</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="video">
+              <a href="#" class="thumbnail">
+                
+                <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                <div class="duration">16:00</div>
+                </a>
+                
+                <div class="details">
+                  <div class="profile">
+                  <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                  <div class="video-details">
+                   <div class="video-title">
+                     <a herf="#" class="video-title">Video Title</a>
+                     <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                    check_circle
+                      </span>
+                    </a>
+                  
+                    </div>
+                
+                    <div class="views">
+                      <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                       circle
+                      </span>
+          
+                       </span> 8 weeks ago</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="video">
+                <a href="#" class="thumbnail">
+                  
+                  <img src="https://images.unsplash.com/photo-1542261777448-23d2a287091c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                  <div class="duration">16:00</div>
+                  </a>
+                  
+                  <div class="details">
+                    <div class="profile">
+                    <img src="https://images.unsplash.com/photo-1627840935425-3d333bb627f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"></div>
+                    <div class="video-details">
+                     <div class="video-title">
+                       <a herf="#" class="video-title">Video Title</a>
+                       <a herf="#" class="channel-name" >Channel Name<span class="material-icons" style="font-size:13px">
+                      check_circle
+                        </span>
+                      </a>
+                    
+                      </div>
+                  
+                      <div class="views">
+                        <a herf="#" >12K views <span class="material-icons" style="font-size:5px;">
+                         circle
+                        </span>
+            
+                         </span> 8 weeks ago</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+         </div>
+       </div>    
+      
+    </div>
+    
+    
+</body>
+</html>
