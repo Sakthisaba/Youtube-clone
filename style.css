@@ -297,14 +297,6 @@ ul{
       padding: 3rem 0rem;
       border-bottom:1px solid #999;
   }
-@media screen and (max-width:800px) {
-    body{
-        background-color: lightblue;
-    }
-    .hide{
-        display: inline;
-        
-    }
 
     
 }
